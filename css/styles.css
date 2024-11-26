@@ -289,8 +289,31 @@ body::before {
 }
 
 .cta-buttons {
-    position: relative;
-    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+}
+
+.cta-buttons .glow-button {
+    flex: 0 1 auto;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cta-buttons .glow-button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 /* Buttons */
