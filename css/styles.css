@@ -505,15 +505,50 @@ body::before {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px 0 var(--glass-shadow);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 1200px) {
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .grid-image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.4rem;
+    }
+
+    .grid-image {
+        height: 120px;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-image {
+        height: 100px;
+    }
 }
 
 .grid-image {
@@ -591,68 +626,122 @@ body::before {
 /* Tokenomics Grid */
 .tokenomics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .tokenomics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tokenomics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .tokenomics-card {
+        padding: 0.75rem;
+        margin-bottom: 0;
+        height: 100%;
+    }
+
+    .tokenomics-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tokenomics-card p {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 576px) {
+    .tokenomics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .tokenomics-card {
+        padding: 0.6rem;
+    }
+
+    .tokenomics-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .tokenomics-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
 }
 
 /* Buy Steps */
 .buy-steps {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    text-align: center;
-    position: relative;
 }
 
 .step-card {
-    text-align: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
     padding: 1.5rem;
-    background: rgba(124, 92, 255, 0.1);
-    border-radius: 15px;
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.step-card:hover {
-    transform: translateY(-5px);
-}
-
-.step-card i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color-2);
-}
-
-.step-card h3 {
-    font-size: 2.4rem;
-    margin: 1rem 0;
-}
-
-.step-card p {
-    font-size: 1.6rem;
-}
-
-/* Disclaimer */
-.disclaimer {
-    font-family: 'Dancing Script', cursive !important;
-    color: var(--text-color-secondary);
-    text-align: center;
-    margin: 1rem auto 0;
-    font-size: 1.8rem;
-    opacity: 0.8;
-    font-weight: 500;
-    grid-column: span 2;
-    white-space: nowrap;
+@media (max-width: 1200px) {
+    .buy-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
     .buy-steps {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
-    
-    .disclaimer {
-        grid-column: 1;
-        white-space: normal;
-        padding: 0 10px;
+
+    .step-card {
+        padding: 0.75rem;
+    }
+
+    .step-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 576px) {
+    .buy-steps {
+        gap: 0.5rem;
+    }
+
+    .step-card {
+        padding: 0.6rem;
+    }
+
+    .step-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .step-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
     }
 }
 
@@ -729,68 +818,68 @@ body::before {
 
 .footer-social {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.footer-social a {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    width: 40px;
-    height: 40px;
-    display: flex;
+.social-link {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background: rgba(124, 92, 255, 0.1);
-    border-radius: 50%;
-}
-
-.footer-social a:hover {
-    color: var(--accent-color-2);
-    transform: translateY(-3px);
-    background: rgba(124, 92, 255, 0.2);
-    box-shadow: 0 0 15px rgba(124, 92, 255, 0.3);
-}
-
-.footer-email {
+    gap: 0.5rem;
     color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s ease;
-    margin-top: 10px;
-    display: inline-block;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    min-width: 120px;
+    justify-content: center;
 }
 
-.footer-email:hover {
-    color: var(--primary-color);
+.social-link i {
+    font-size: 1.5rem;
+}
+
+.social-link span {
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
     .footer-social {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+        padding: 1rem;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
-    
-    .footer-social a {
-        font-size: 1.2rem;
-        width: 35px;
-        height: 35px;
+
+    .social-link {
+        width: 100%;
+        min-width: unset;
+        font-size: 0.9rem;
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .side-by-side-sections {
-        flex-direction: column;
+@media (max-width: 400px) {
+    .footer-social {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem;
     }
-    
-    .floating-image {
-        width: 100px;
-        height: 100px;
+
+    .social-link {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.85rem;
     }
-    
-    .floating-image.left { left: 5%; }
-    .floating-image.right { right: 5%; }
+
+    .social-link i {
+        font-size: 1rem;
+    }
 }
 
 /* Tokenomics Card */
@@ -850,6 +939,31 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, button {
 
 .disclaimer {
     font-family: 'Dancing Script', cursive !important;
+    color: var(--text-color-secondary);
+    text-align: center;
+    margin: 1rem auto;
+    font-size: 1.8rem;
+    opacity: 0.8;
+    font-weight: 500;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .disclaimer {
+        font-size: 1.4rem;
+        margin: 0.75rem auto;
+        padding: 0 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .disclaimer {
+        font-size: 1.2rem;
+        margin: 0.5rem auto;
+        padding: 0 0.5rem;
+    }
 }
 
 h1 {
@@ -1048,7 +1162,7 @@ p {
     }
 
     .image-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .grid-image {
@@ -1112,5 +1226,219 @@ p {
     .nav-logo {
         height: 35px;
         width: 35px;
+    }
+}
+
+.about-content {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 1.5rem;
+        margin: 0.5rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        overflow: hidden;
+    }
+
+    .glass-box {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-content {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* General adjustments */
+    .section {
+        padding: 1rem 0;
+        margin-top: -40px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .glass-box {
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 15px;
+    }
+
+    /* Typography */
+    body {
+        font-size: 14px;
+    }
+
+    h2.gradient-text {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Tokenomics section */
+    .tokenomics-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .tokenomics-card {
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tokenomics-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tokenomics-card p {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .contract-status {
+        padding: 0.75rem;
+    }
+
+    .contract-status h3 {
+        font-size: 1.2rem;
+    }
+
+    .contract-address {
+        font-size: 0.8rem;
+        word-break: break-all;
+    }
+
+    /* Buttons */
+    .button-container {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .glow-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        margin: 0.25rem;
+    }
+
+    .big-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Community section */
+    .community-content {
+        padding: 1rem;
+    }
+
+    .community-content p {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .footer-logo-img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+
+    /* Social links */
+    .footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .social-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.75rem;
+        min-width: auto;
+        flex: 0 1 calc(50% - 0.5rem);
+    }
+
+    .social-link i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Even smaller adjustments */
+    .section {
+        padding: 0.75rem 0;
+    }
+
+    h2.gradient-text {
+        font-size: 1.5rem;
+    }
+
+    .tokenomics-card h3,
+    .contract-status h3 {
+        font-size: 1.1rem;
+    }
+
+    .glow-button,
+    .big-button {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .contract-address {
+        font-size: 0.75rem;
+    }
+
+    .footer-social {
+        padding: 0.25rem;
+    }
+
+    .social-link {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.6rem;
     }
 }
