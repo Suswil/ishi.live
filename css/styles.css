@@ -154,6 +154,7 @@ body::before {
     gap: 10px;
     text-decoration: none;
     transition: transform 0.3s ease;
+    padding: 0.5rem;
 }
 
 .logo-link:hover {
@@ -166,6 +167,21 @@ body::before {
     background: linear-gradient(45deg, #7c5cff, #ff9fb6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
+    padding: 0.25rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .logo-link span {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-link span {
+        font-size: 18px;
+    }
 }
 
 .nav-logo {
@@ -1070,6 +1086,7 @@ h2.gradient-text {
     padding: 0 1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 @media (max-width: 768px) {
@@ -1602,11 +1619,13 @@ h2.gradient-text {
 .hero-banner {
     text-align: center;
     margin-bottom: 2rem;
-    padding: 2rem;
+    padding: 2rem 1rem;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-banner h1 {
@@ -1619,6 +1638,11 @@ h2.gradient-text {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    width: 100%;
+    display: inline-block;
+    line-height: 1.2;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .hero-banner p {
@@ -1627,43 +1651,71 @@ h2.gradient-text {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    width: 100%;
+    display: inline-block;
+    line-height: 1.2;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .hero-banner {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
         margin-bottom: 1.5rem;
     }
 
     .hero-banner h1 {
-        font-size: 2rem;
-        padding: 0 0.5rem;
+        font-size: 1.8rem;
+        padding: 0 5px;
+        margin-bottom: 0.75rem;
     }
 
     .hero-banner p {
         font-size: 1.2rem;
-        padding: 0 0.5rem;
+        padding: 0 5px;
     }
 }
 
 @media (max-width: 576px) {
     .hero-banner {
-        padding: 1rem;
+        padding: 1rem 0.5rem;
         margin-bottom: 1rem;
     }
 
     .hero-banner h1 {
-        font-size: 1.5rem;
-        padding: 0 0.25rem;
+        font-size: 1.4rem;
+        padding: 0 5px;
+        margin-bottom: 0.5rem;
     }
 
     .hero-banner p {
         font-size: 1rem;
-        padding: 0 0.25rem;
+        padding: 0 5px;
     }
 
     .footer-email {
         font-size: 0.9rem;
         padding: 0 0.25rem;
     }
+}
+
+.banner-link {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.banner-link:hover {
+    transform: translateY(-2px);
+}
+
+.banner-link h1,
+.banner-link p {
+    transition: opacity 0.3s ease;
+}
+
+.banner-link:hover h1,
+.banner-link:hover p {
+    opacity: 0.9;
 }
