@@ -424,6 +424,10 @@ body::before {
     place-items: center;
 }
 
+.button-container .glow-button {
+    text-transform: capitalize;
+}
+
 .glow-button {
     display: flex;
     align-items: center;
@@ -438,16 +442,27 @@ body::before {
     margin: 10px;
     min-width: 160px;
     text-align: center;
-    font-size: 1.4rem;
-    font-family: 'Typewriter', monospace;
+    font-size: 1.8rem;
     font-weight: bold;
-    background: linear-gradient(45deg, #64ffda, #63b3ed);
+    text-transform: uppercase;
     color: #000;
     text-decoration: none;
     box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
     letter-spacing: 1px;
     width: 100%;
     max-width: 300px;
+}
+
+.glow-button span {
+    text-transform: none;
+}
+
+.button-container .glow-button span {
+    text-transform: lowercase;
+}
+
+.button-container .glow-button span::first-letter {
+    text-transform: uppercase !important;
 }
 
 .glow-button:hover {
@@ -477,13 +492,15 @@ body::before {
 }
 
 .glow-button.primary,
-.glow-button.secondary {
+.glow-button.secondary,
+.glow-button.whitepaper {
     background: linear-gradient(45deg, #64ffda, #63b3ed);
     color: #000;
 }
 
 .glow-button.primary:hover,
-.glow-button.secondary:hover {
+.glow-button.secondary:hover,
+.glow-button.whitepaper:hover {
     background: linear-gradient(45deg, #63b3ed, #64ffda);
     box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
 }
@@ -508,6 +525,12 @@ body::before {
         width: 100%;
         max-width: 250px;
     }
+}
+
+.about-cta .glow-button {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* Sections */
@@ -966,6 +989,39 @@ body::before {
     }
 }
 
+.footer-social a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+    color: #8fcdff;
+    text-shadow: 0 0 10px rgba(143, 205, 255, 0.5);
+}
+
+.footer-social i {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .footer-social a {
+        font-size: 1.8rem;
+        margin: 0 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-social a {
+        font-size: 1.6rem;
+        margin: 0 0.5rem;
+    }
+}
+
 /* Tokenomics Card */
 .tokenomics-card,
 .contract-status {
@@ -1087,6 +1143,9 @@ h2.gradient-text {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -1384,6 +1443,11 @@ h2.gradient-text {
     .hero-content {
         padding-top: 90px;
     }
+
+    .nav-logo {
+        height: 35px;
+        width: 35px;
+    }
 }
 
 /* Landscape orientations */
@@ -1453,6 +1517,29 @@ h2.gradient-text {
 
     .container {
         padding: 0 10px;
+    }
+}
+
+.about-cta {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.about-cta .glow-button {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .about-cta {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-cta {
+        margin-top: 1rem;
     }
 }
 
@@ -1718,4 +1805,43 @@ h2.gradient-text {
 .banner-link:hover h1,
 .banner-link:hover p {
     opacity: 0.9;
+}
+
+.glow-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: rgba(124, 92, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+    letter-spacing: 1px;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+.glow-button::first-letter {
+    text-transform: uppercase;
+}
+
+.button-container .glow-button {
+    text-transform: none;
+}
+
+.button-container .glow-button::first-letter {
+    text-transform: uppercase !important;
+}
+
+.cta-buttons .glow-button,
+.about-cta .glow-button {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 30px;
 }
